@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="/static/base.css"/>
+    <link rel="stylesheet" href="/static/nav.css"/>
+    <link rel="stylesheet" href="/static/footer.css"/>
+    {% block extra_styles %}
+    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+    <div id="nav">
+        {% include 'nav.html' %}
+    </div>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="footer">
+        {% include 'footer.html' %}
+    </div>
+</body>
+</html>
