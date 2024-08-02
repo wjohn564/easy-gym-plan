@@ -1,8 +1,16 @@
 from flask import Flask
+from config import Config
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+basedir = os.path.abspath(os.path.dirname(__file__))
+load_dotenv(os.path.join(basedir, '.env'))
 
 
 def create_app():
     app = Flask(__name__)
+    app.config.from_object(Config)
 
     # Register blueprints
     from .main import main as main_blueprint

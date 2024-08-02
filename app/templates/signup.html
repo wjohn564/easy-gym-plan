@@ -1,10 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title %}Sign Up{% endblock %}
+
+{% block content%}
+<h1>Sign Up</h1>
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.email.label }}<br>
+        {{ form.email(size=32) }}<br>
+        {{ form.email.errors }}
+    </p>
+    <p>
+        {{ form.first_name.label }}<br>
+        {{ form.first_name(size=32) }}<br>
+        {{ form.first_name.errors }}
+    </p>
+    <p>
+        {{ form.last_name.label }}<br>
+        {{ form.last_name(size=32) }}<br>
+        {{ form.last_name.errors }}
+    </p>
+    <p>
+        {{ form.password.label }}<br>
+        {{ form.password(size=32) }}<br>
+        {{ form.password.errors }}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
