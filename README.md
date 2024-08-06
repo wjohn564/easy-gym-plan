@@ -1,1 +1,1 @@
-# easy-gym-plan
+# easy-sbd
